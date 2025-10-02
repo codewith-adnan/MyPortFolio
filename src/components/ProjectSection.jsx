@@ -11,7 +11,6 @@ const projects = [
   {
     id: 1,
     title: "Car Rental System",
-    price: "$200",
     description: "Complete car rental booking platform built with React & Styled Components.",
     image: Img1,
     link: "https://carrental5.netlify.app/",
@@ -20,7 +19,6 @@ const projects = [
   {
     id: 2,
     title: "Gift Card Website",
-    price: "$150",
     description: "Modern landing page for digital gift cards using React & Styled Components.",
     image: Img2,
     link: "https://giftcard17.netlify.app/",
@@ -29,7 +27,6 @@ const projects = [
   {
     id: 3,
     title: "Courier Management",
-    price: "$180",
     description: "Courier and logistics management web app using Vue Js & SCSS.",
     image: Img3,
     link: "https://devgodeliveryservices.netlify.app/",
@@ -38,7 +35,6 @@ const projects = [
   {
     id: 4,
     title: "RealTasker Project",
-    price: "$250",
     description: "Task management and productivity app built with React + Styled Components.",
     image: Img4,
     link: "https://realtasker.vercel.app/",
@@ -47,7 +43,6 @@ const projects = [
   {
     id: 5, // New project ID
     title: "Real-Time Ad Landing Page",
-    price: "$220",
     description: "A dynamic landing page with real-time functionality for advertisement purposes, built with React and Tailwind CSS to meet customer requirements.",
     image: Img5, // Using a new image placeholder
     link: "https://wearethogether.vercel.app/",
@@ -77,9 +72,7 @@ export default function ProjectSection() {
             className="bg-white rounded-xl shadow-md overflow-hidden relative transition transform hover:-translate-y-2 hover:shadow-lg"
           >
             {/* Price Badge */}
-            <div className="absolute top-[18px] -left-[0px] bg-red-500 text-white text-sm font-semibold px-3 py-1 rounded-full z-10">
-              Start at {project.price}
-            </div>
+            
 
             {/* Image */}
             <div className="w-full h-56 flex items-center justify-center bg-white">

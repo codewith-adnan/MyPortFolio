@@ -20,17 +20,17 @@ const contactDetails = [
   {
     icon: <FaPhoneAlt />,
     title: "Contact Number",
-    detail: "0303-0834088",
+    detail: "03174103743",
   },
   {
     icon: <FaPaperPlane />,
     title: "Email Address",
-    detail: "waleediftikhar188@gmail.com",
+    detail: "sendtomadnan@gmail.com",
   },
   {
     icon: <FaGlobe />,
     title: "Website",
-    detail: "yoursite.com",
+    detail: "www.comingsoon.com",
   },
 ];
 

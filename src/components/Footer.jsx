@@ -120,7 +120,7 @@ export default function Footer() {
               <a href="https://github.com/codewith-adnan" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
                 <FaGithub className="text-white" />
               </a>
-              <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://www.facebook.com/share/1CvChNiyFz/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
                 <FaFacebookF className="text-white" />
               </a>
               <a href="https://wa.me/923174103743" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
