@@ -7,7 +7,7 @@ import HeroImg from "../assets/Heroimg.jpeg";
 
 export default function HeroSection() {
   return (
-    <div className="bg-[#F8F7F1] min-h-screen flex flex-col items-center justify-center px-4 py-12">
+    <div className="bg-[#F8F7F1] min-h-screen flex flex-col items-center justify-center px-4 py-12 mt-8">
       <div className="max-w-7xl w-full flex flex-col lg:grid lg:grid-cols-2 gap-12">
         {/* Left Column */}
         <div>
@@ -48,7 +48,7 @@ export default function HeroSection() {
 
           {/* Contact Button */}
           <a href="#contact">
-            <button className="bg-[#f05228] font-figtree text-white text-[20px] font-semibold px-6 py-3 rounded shadow-md border-2 border-transparent hover:bg-gray-400   transition duration-300 mb-6">
+            <button className="bg-[#f05228] font-figtree text-white text-[20px] font-semibold px-6 py-3 rounded shadow-md border-2 border-transparent hover:bg-gray-800   transition duration-300  mt-[-10px]">
               Contact Me
             </button>
           </a>

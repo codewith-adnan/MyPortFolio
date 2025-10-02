@@ -8,10 +8,9 @@ import {
   FaGlobe,
   FaDownload,
 } from "react-icons/fa";
-import ContactImg from "../assets/Heroimg.jpeg"; // Your image
-import CV from "../assets/Muhhamad Adnan.pdf"; // Your CV
+import ContactImg from "../assets/Heroimg.jpeg"; 
+import CV from "../assets/Muhhamad Adnan.pdf"; 
 
-// Array for the top contact details
 const contactDetails = [
   {
     icon: <FaMapMarkerAlt />,
@@ -41,7 +40,6 @@ export default function ContactMe() {
   const sendEmail = (e) => {
     e.preventDefault();
 
-    // Replace with your actual EmailJS credentials
     emailjs
       .sendForm(
         "YOUR_SERVICE_ID",
@@ -145,7 +143,7 @@ export default function ContactMe() {
 
               <button
                 type="submit"
-                className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-400 transition"
+                className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
               >
                 Send Message
               </button>
@@ -159,7 +157,7 @@ export default function ContactMe() {
             href={CV}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-gray-800 text-white py-3 rounded-lg font-semibold text-center hover:bg-gray-400 transition"
+            className="flex-1 bg-gray-800 text-white py-3 rounded-lg font-semibold text-center hover:bg-[#f05228] transition"
           >
             <FaDownload className="inline mr-2" />
             View CV
@@ -167,7 +165,7 @@ export default function ContactMe() {
           <a
             href={CV}
             download
-            className="flex-1 bg-[#f05228] text-white py-3 rounded-lg font-semibold text-center hover:bg-gray-400 transition"
+            className="flex-1 bg-[#f05228] text-white py-3 rounded-lg font-semibold text-center hover:bg-gray-800 transition"
           >
             <FaDownload className="inline mr-2" />
             Download CV

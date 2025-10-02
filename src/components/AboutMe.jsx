@@ -57,7 +57,7 @@ export default function AboutMe() {
           <a
             href="/src/assets/Muhhamad Adnan.pdf" 
             download
-            className="bg-[#f05228] text-white font-bold py-3 px-8 rounded-full hover:bg-gray-400 transition-all duration-300"
+            className="bg-[#f05228] text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-all duration-300"
           >
             DOWNLOAD CV
           </a>
