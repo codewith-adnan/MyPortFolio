@@ -6,7 +6,7 @@ import {
   FaEnvelope, 
   FaGithub, 
   FaFacebookF, 
-  FaLinkedin, // LinkedIn icon import ho gaya hai
+  FaLinkedin,
   FaWhatsapp
 } from 'react-icons/fa';
 
@@ -27,14 +27,14 @@ const servicesLinks = [
 ];
 
 export default function Footer() {
-  const [tooltipText, setTooltipText] = useState('Click to copy');
   const phoneNumber = '03174103743';
+  const [tooltipText, setTooltipText] = useState(` Click to copy`);
 
   const handleCopy = () => {
     navigator.clipboard.writeText(phoneNumber).then(() => {
       setTooltipText('Copied!');
       setTimeout(() => {
-        setTooltipText('Click to copy');
+        setTooltipText(` Click to copy`);
       }, 2000); 
     });
   };
@@ -95,12 +95,14 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-[#f05228] mt-1 mr-3 flex-shrink-0" />
                 <span>Punjab, Pakistan</span>
               </li>
+              {/* --- CHANGE HERE: li ko relative banaya gaya hai --- */}
               <li className="relative flex items-center group">
                 <FaPhoneAlt className="text-[#f05228] mr-3" />
                 <span onClick={handleCopy} className="cursor-pointer">
                   {phoneNumber}
                 </span>
-               <span className="absolute left-full ml-3 bg-gray-600 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
+                {/* --- CHANGE HERE: Tooltip ki position change ki gayi hai --- */}
+                <span className="absolute bottom-full left-1/2 -translate-x-1/2  bg-gray-600 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {tooltipText}
                 </span>
               </li>
@@ -112,9 +114,7 @@ export default function Footer() {
               </li>
             </ul>
             <div className="flex space-x-4 mt-6">
-              
-              {/* --- LINKEDIN ICON ADDED HERE --- */}
-              <a href="https://www.linkedin.com/in/muhammad-adnan-19ba34378" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
+              <a href="https://linkedin.com/in/your-profile-url" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">
                 <FaLinkedin className="text-white" />
               </a>
               <a href="https://github.com/codewith-adnan" target="_blank" rel="noopener noreferrer" className="w-10 h-10 bg-gray-700 rounded-full flex items-center justify-center hover:bg-[#f05228] transition-all duration-300 active:scale-90">

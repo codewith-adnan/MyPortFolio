@@ -42,7 +42,7 @@ export default function Navbar() {
               smooth={true}
               duration={800}
               onClick={() => setActiveTab('home')} // Ensure home is active on logo click
-              className="text-3xl font-extrabold cursor-pointer"
+              className="text-3xl  font-extrabold cursor-pointer"
             >
               <span className="text-gray-600">PORT</span>
               <span className="text-[#f05228]">FOLIO</span>
@@ -72,8 +72,8 @@ export default function Navbar() {
                       // Yahan animation change ki hai
                       initial={{ scaleX: 0 }}
                       animate={{ scaleX: 1 }}
-                      transition={{ duration: 0.4, ease: "easeInOut" }}
-                      style={{ originX: 0 }} // Yeh ensure karega ke animation left se start ho
+                      transition={{ duration: 0.3, ease: "easeInOut" }}
+                      style={{ originX: 0 }} // 
                     />
                   )}
                 </li>
