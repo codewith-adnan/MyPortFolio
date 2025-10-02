@@ -1,4 +1,4 @@
-import React, { useRef } from "react";
+import React, { useRef, useState } from "react";
 import emailjs from "emailjs-com";
 import { motion } from "framer-motion";
 import {
@@ -7,9 +7,11 @@ import {
   FaPaperPlane,
   FaGlobe,
   FaDownload,
+  FaCheckCircle,
+  FaTimesCircle,
 } from "react-icons/fa";
-import ContactImg from "../assets/Heroimg.jpeg"; 
-import CV from "../assets/Muhhamad Adnan.pdf"; 
+import ContactImg from "../assets/Heroimg.jpeg";
+import CV from "../assets/Muhhamad Adnan.pdf";
 
 const contactDetails = [
   {
@@ -36,36 +38,71 @@ const contactDetails = [
 
 export default function ContactMe() {
   const form = useRef();
+  const [toast, setToast] = useState({ show: false, type: "", message: "" });
+
+  const showToast = (type, message) => {
+    setToast({ show: true, type, message });
+    setTimeout(() => setToast({ show: false, type: "", message: "" }), 3000);
+  };
 
   const sendEmail = (e) => {
     e.preventDefault();
 
+    // 1️⃣ Send auto-reply to user
     emailjs
       .sendForm(
-        "YOUR_SERVICE_ID",
-        "YOUR_TEMPLATE_ID",
+        "service_g6bo8ne",
+        "template_autoReply",
         form.current,
-        "YOUR_PUBLIC_KEY"
+        "DNCRjbjp8-L4_pUPa"
       )
-      .then(
-        () => {
-          alert("Message Sent Successfully!");
-          e.target.reset();
-        },
-        (error) => {
-          alert("Something went wrong. Please try again.");
-          console.error("EmailJS Error:", error.text);
-        }
-      );
+      .then(() => {
+        console.log("✅ Auto-reply sent to user");
+      })
+      .catch((error) => {
+        console.error("Auto-reply error:", error.text);
+      });
+
+    
+    emailjs
+      .sendForm(
+        "service_g6bo8ne",
+        "template_a6f4sjj",
+        form.current,
+        "DNCRjbjp8-L4_pUPa"
+      )
+      .then(() => {
+        showToast("success", "Message Sent Successfully!");
+        e.target.reset();
+      })
+      .catch((error) => {
+        console.error("Admin notify error:", error.text);
+        showToast("error", "Something went wrong. Please try again.");
+      });
   };
 
   return (
     <section id="contact" className="bg-[#F8F7F1] text-white py-20">
+      
+      {toast.show && (
+        <div
+          className={`fixed top-5 right-5 flex items-center gap-3 border rounded-lg shadow-md px-4 py-2 
+          bg-gray-600 border-gray-400 text-gray-200 transition-all duration-300 z-50`}
+        >
+          {toast.type === "success" ? (
+            <FaCheckCircle className="text-[#f05228] text-xl" />
+          ) : (
+            <FaTimesCircle className="text-[#f05228] text-xl" />
+          )}
+          <span>{toast.message}</span>
+        </div>
+      )}
+
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Section Heading */}
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-figtree">
-            <span className="text-gray-400">Contact</span> < span className="text-[#f05228]">Me</span>
+            <span className="text-gray-400">Contact</span>{" "}
+            <span className="text-[#f05228]">Me</span>
           </h2>
           <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
             "Have a project or idea in mind? Feel free to contact me—let's build
@@ -73,7 +110,6 @@ export default function ContactMe() {
           </p>
         </div>
 
-        {/* Contact Icons Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
           {contactDetails.map((item, index) => (
             <div key={index} className="flex flex-col items-center text-center">
@@ -91,9 +127,7 @@ export default function ContactMe() {
           ))}
         </div>
 
-        {/* Form and Image Section */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
-          {/* Left Side - Image */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -107,7 +141,6 @@ export default function ContactMe() {
             />
           </motion.div>
 
-          {/* Right Side - Form */}
           <motion.div
             initial={{ opacity: 0, x: 50 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -124,21 +157,21 @@ export default function ContactMe() {
                 name="name"
                 placeholder="Your Name"
                 required
-                className="w-full bg-[#F8F7F1] text-white border border-gray-600 rounded-lg px-4 py-3 focus:ring-2  outline-none"
+                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
               />
               <input
                 type="email"
                 name="email"
                 placeholder="Your Email"
                 required
-                className="w-full bg-[#F8F7F1] text-white border border-gray-600 rounded-lg px-4 py-3 focus:ring-2  outline-none"
+                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
               />
               <textarea
                 name="message"
                 rows="5"
                 placeholder="Your Message"
                 required
-                className="w-full bg-[#F8F7F1] text-white border border-gray-600 rounded-lg px-4 py-3 focus:ring-2  outline-none"
+                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
               ></textarea>
 
               <button
@@ -151,7 +184,6 @@ export default function ContactMe() {
           </motion.div>
         </div>
 
-        {/* CV Buttons */}
         <div className="flex flex-col md:flex-row gap-6 mt-16 max-w-2xl mx-auto">
           <a
             href={CV}

@@ -44,19 +44,17 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-12">
           
-          {/* Column 1: Portfolio */}
           <div>
             <h3 className="text-2xl font-bold mb-4">
               <span className="text-gray-400">PORT</span>
               <span className="text-[#f05228]">FOLIO</span>
             </h3>
-            <div className="pr-4 text-sm leading-relaxed space-y-3">
-              <p>"MERN STACK Developer specializing in building fast and responsive web interfaces."</p>
+            <div className="pr-4 text-sm leading-relaxed space-y-4">
+              <p>MERN STACK Developer specializing in building fast and responsive web interfaces.</p>
               <p>A passionate Web Developer with 01+ years of experience building responsive, user-friendly websites for clients worldwide.</p>
             </div>
           </div>
 
-          {/* Column 2: Quick Links */}
           <div>
             <h3 className="text-xl font-bold text-[#f05228] mb-4">Links</h3>
             <ul className="space-y-3">
@@ -75,7 +73,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 3: Services */}
           <div>
             <h3 className="text-xl font-bold text-[#f05228] mb-4">Services</h3>
             <ul className="space-y-3">
@@ -87,7 +84,6 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Column 4: Have a Questions? */}
           <div>
             <h3 className="text-xl font-bold text-[#f05228] mb-4">Have a Questions?</h3>
             <ul className="space-y-4">
@@ -95,13 +91,11 @@ export default function Footer() {
                 <FaMapMarkerAlt className="text-[#f05228] mt-1 mr-3 flex-shrink-0" />
                 <span>Punjab, Pakistan</span>
               </li>
-              {/* --- CHANGE HERE: li ko relative banaya gaya hai --- */}
               <li className="relative flex items-center group">
                 <FaPhoneAlt className="text-[#f05228] mr-3" />
                 <span onClick={handleCopy} className="cursor-pointer">
                   {phoneNumber}
                 </span>
-                {/* --- CHANGE HERE: Tooltip ki position change ki gayi hai --- */}
                 <span className="absolute bottom-full left-1/2 -translate-x-1/2  bg-gray-600 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
                   {tooltipText}
                 </span>
@@ -131,7 +125,6 @@ export default function Footer() {
 
         </div>
         
-        {/* Copyright */}
         <div className="mt-16 pt-8 border-t border-gray-700 text-center">
           <p>&copy; {new Date().getFullYear()} All rights reserved. Made by Adnan Saeed.</p>
         </div>
