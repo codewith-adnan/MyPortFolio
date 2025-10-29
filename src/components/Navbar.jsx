@@ -41,7 +41,7 @@ export default function Navbar() {
               to="home"
               smooth={true}
               duration={800}
-              onClick={() => setActiveTab('home')} // Ensure home is active on logo click
+              onClick={() => setActiveTab('home')} 
               className="text-3xl  font-extrabold cursor-pointer"
             >
               <span className="text-gray-600">PORT</span>

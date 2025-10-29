@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
-import emailjs from "emailjs-com";
+// ❌ emailjs-com ki ab zaroorat nahi hai
+// import emailjs from "emailjs-com"; 
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -14,6 +15,7 @@ import ContactImg from "../assets/Heroimg.jpeg";
 import CV from "../assets/Muhhamad Adnan.pdf";
 
 const contactDetails = [
+  // ... (yeh section bilkul same rahega, ismein koi change nahi)
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
@@ -39,46 +41,53 @@ const contactDetails = [
 export default function ContactMe() {
   const form = useRef();
   const [toast, setToast] = useState({ show: false, type: "", message: "" });
+  // ✅ Nayi state loading ko handle karne ke liye
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const showToast = (type, message) => {
     setToast({ show: true, type, message });
     setTimeout(() => setToast({ show: false, type: "", message: "" }), 3000);
   };
 
-  const sendEmail = (e) => {
-    e.preventDefault();
+  // ✅ --- NAYA sendEmail FUNCTION ---
+  // Is function ko 'async' bana diya gaya hai
+  const sendEmail = async (e) => {
+    e.preventDefault(); // Page reload hone se rokein
+    setIsSubmitting(true); // Loading state shuru karein
 
-    // 1️⃣ Send auto-reply to user
-    emailjs
-      .sendForm(
-        "service_g6bo8ne",
-        "template_autoReply",
-        form.current,
-        "DNCRjbjp8-L4_pUPa"
-      )
-      .then(() => {
-        console.log("✅ Auto-reply sent to user");
-      })
-      .catch((error) => {
-        console.error("Auto-reply error:", error.text);
+    // Form se data hasil karein
+    const formData = {
+      name: form.current.name.value,
+      email: form.current.email.value,
+      message: form.current.message.value,
+      // subject: form.current.subject.value, 
+    };
+
+    try {
+      // Apni Vercel API ko call karein
+      const response = await fetch("https://porfolioapisetting.vercel.app/api/send-message", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
       });
 
-    
-    emailjs
-      .sendForm(
-        "service_g6bo8ne",
-        "template_a6f4sjj",
-        form.current,
-        "DNCRjbjp8-L4_pUPa"
-      )
-      .then(() => {
-        showToast("success", "Message Sent Successfully!");
-        e.target.reset();
-      })
-      .catch((error) => {
-        console.error("Admin notify error:", error.text);
-        showToast("error", "Something went wrong. Please try again.");
-      });
+      // API se response ka intezar karein
+      const result = await response.json();
+
+      if (response.ok) { // Agar response kamyab tha (status 200)
+        showToast("success", result.message || "Message Sent Successfully!");
+        e.target.reset(); // Form ko khaali kar dein
+      } else { // Agar API ne error bheja (status 400, 500, etc.)
+        showToast("error", result.message || "Something went wrong. Please try again.");
+      }
+    } catch (error) { // Agar network ya koi aur masla ho
+      console.error("Fetch error:", error);
+      showToast("error", "Failed to send message. Check your connection.");
+    } finally {
+      setIsSubmitting(false); // Loading state khatam karein
+    }
   };
 
   return (
@@ -99,6 +108,8 @@ export default function ContactMe() {
       )}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        {/* Baqi saara JSX/UI bilkul same rahega, usmein koi change nahi */}
+        
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-figtree">
             <span className="text-gray-400">Contact</span>{" "}
@@ -176,15 +187,19 @@ export default function ContactMe() {
 
               <button
                 type="submit"
-                className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition"
+                // ✅ Button ko disable karein jab message jaa raha ho
+                disabled={isSubmitting} 
+                className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                Send Message
+                {/* ✅ Button ka text badlein loading state ke dauran */}
+                {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
           </motion.div>
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mt-16 max-w-2xl mx-auto">
+          {/* ... (CV buttons bilkul same rahenge, inmein koi change nahi) */}
           <a
             href={CV}
             target="_blank"

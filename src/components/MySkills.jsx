@@ -33,7 +33,7 @@ export default function MySkills() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             viewport={{ once: true }}
-            className="text-gray-400 mt-4 max-w-2xl mx-auto" // Text color changed for visibility
+            className="text-gray-400 mt-4 max-w-2xl mx-auto" 
           >
             "I turn ideas into powerful, interactive web experiences—driven by
             creativity, code, and a passion for seamless design."
