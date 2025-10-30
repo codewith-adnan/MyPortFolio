@@ -1,6 +1,4 @@
 import React, { useRef, useState } from "react";
-// ❌ emailjs-com ki ab zaroorat nahi hai
-// import emailjs from "emailjs-com"; 
 import { motion } from "framer-motion";
 import {
   FaMapMarkerAlt,
@@ -15,7 +13,6 @@ import ContactImg from "../assets/Heroimg.jpeg";
 import CV from "../assets/Muhhamad Adnan.pdf";
 
 const contactDetails = [
-  // ... (yeh section bilkul same rahega, ismein koi change nahi)
   {
     icon: <FaMapMarkerAlt />,
     title: "Address",
@@ -41,7 +38,6 @@ const contactDetails = [
 export default function ContactMe() {
   const form = useRef();
   const [toast, setToast] = useState({ show: false, type: "", message: "" });
-  // ✅ Nayi state loading ko handle karne ke liye
   const [isSubmitting, setIsSubmitting] = useState(false);
 
   const showToast = (type, message) => {
@@ -49,13 +45,11 @@ export default function ContactMe() {
     setTimeout(() => setToast({ show: false, type: "", message: "" }), 3000);
   };
 
-  // ✅ --- NAYA sendEmail FUNCTION ---
-  // Is function ko 'async' bana diya gaya hai
   const sendEmail = async (e) => {
-    e.preventDefault(); // Page reload hone se rokein
-    setIsSubmitting(true); // Loading state shuru karein
+    e.preventDefault(); 
+    setIsSubmitting(true); 
 
-    // Form se data hasil karein
+   
     const formData = {
       name: form.current.name.value,
       email: form.current.email.value,
@@ -64,7 +58,6 @@ export default function ContactMe() {
     };
 
     try {
-      // Apni Vercel API ko call karein
       const response = await fetch("https://porfolioapisetting.vercel.app/api/send-message", {
         method: "POST",
         headers: {
@@ -73,20 +66,19 @@ export default function ContactMe() {
         body: JSON.stringify(formData),
       });
 
-      // API se response ka intezar karein
       const result = await response.json();
 
-      if (response.ok) { // Agar response kamyab tha (status 200)
+      if (response.ok) { 
         showToast("success", result.message || "Message Sent Successfully!");
-        e.target.reset(); // Form ko khaali kar dein
-      } else { // Agar API ne error bheja (status 400, 500, etc.)
+        e.target.reset(); 
+      } else { 
         showToast("error", result.message || "Something went wrong. Please try again.");
       }
-    } catch (error) { // Agar network ya koi aur masla ho
+    } catch (error) { 
       console.error("Fetch error:", error);
       showToast("error", "Failed to send message. Check your connection.");
     } finally {
-      setIsSubmitting(false); // Loading state khatam karein
+      setIsSubmitting(false); 
     }
   };
 
@@ -108,7 +100,6 @@ export default function ContactMe() {
       )}
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Baqi saara JSX/UI bilkul same rahega, usmein koi change nahi */}
         
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-figtree">
@@ -187,11 +178,9 @@ export default function ContactMe() {
 
               <button
                 type="submit"
-                // ✅ Button ko disable karein jab message jaa raha ho
                 disabled={isSubmitting} 
                 className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
-                {/* ✅ Button ka text badlein loading state ke dauran */}
                 {isSubmitting ? "Sending..." : "Send Message"}
               </button>
             </form>
@@ -199,7 +188,6 @@ export default function ContactMe() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mt-16 max-w-2xl mx-auto">
-          {/* ... (CV buttons bilkul same rahenge, inmein koi change nahi) */}
           <a
             href={CV}
             target="_blank"
