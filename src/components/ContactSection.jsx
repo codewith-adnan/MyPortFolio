@@ -46,61 +46,78 @@ export default function ContactMe() {
   };
 
   const sendEmail = async (e) => {
-    e.preventDefault(); 
-    setIsSubmitting(true); 
+    e.preventDefault();
+    setIsSubmitting(true);
 
-   
     const formData = {
       name: form.current.name.value,
       email: form.current.email.value,
       message: form.current.message.value,
-      // subject: form.current.subject.value, 
     };
 
     try {
-      const response = await fetch("https://porfolioapisetting.vercel.app/api/send-message", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
+      const response = await fetch(
+        "https://porfolioapisetting.vercel.app/api/send-message",
+        {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(formData),
+        }
+      );
 
       const result = await response.json();
 
-      if (response.ok) { 
+      if (response.ok) {
         showToast("success", result.message || "Message Sent Successfully!");
-        e.target.reset(); 
-      } else { 
+        e.target.reset();
+      } else {
         showToast("error", result.message || "Something went wrong. Please try again.");
       }
-    } catch (error) { 
+    } catch (error) {
       console.error("Fetch error:", error);
       showToast("error", "Failed to send message. Check your connection.");
     } finally {
-      setIsSubmitting(false); 
+      setIsSubmitting(false);
     }
   };
 
   return (
     <section id="contact" className="bg-[#F8F7F1] text-white py-20">
-      
+      {/* ✅ Toast Notification */}
       {toast.show && (
         <div
-          className={`fixed top-5 right-5 flex items-center gap-3 border rounded-lg shadow-md px-4 py-2 
-          bg-gray-600 border-gray-400 text-gray-200 transition-all duration-600 z-50`}
+          className={`fixed top-5 right-5 flex flex-col gap-2 border rounded-lg shadow-md px-4 py-2 
+          bg-gray-600 text-gray-200 transition-all duration-600 z-50 w-[280px]
+          ${
+            toast.type === "success"
+              ? "border-green-400"
+              : "border-[#f05228]"
+          }`}
         >
-          {toast.type === "success" ? (
-            <FaCheckCircle className="text-[#f05228] text-xl" />
-          ) : (
-            <FaTimesCircle className="text-[#f05228] text-xl" />
-          )}
-          <span>{toast.message}</span>
+          <div className="flex items-center gap-3">
+            {toast.type === "success" ? (
+              <FaCheckCircle className="text-green-400 text-xl" />
+            ) : (
+              <FaTimesCircle className="text-[#f05228] text-xl" />
+            )}
+            <span>{toast.message}</span>
+          </div>
+
+          {/* ⚡ Bottom Loader Bar */}
+          <div className="relative w-full h-[3px] bg-gray-500 overflow-hidden rounded-full">
+            <div
+              className={`absolute top-0 left-0 h-full ${
+                toast.type === "success" ? "bg-green-400" : "bg-[#f05228]"
+              } animate-toastLoader`}
+            ></div>
+          </div>
         </div>
       )}
 
+      {/* 🔹 Contact Section */}
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        
         <div className="text-center mb-16">
           <h2 className="text-4xl font-bold font-figtree">
             <span className="text-gray-400">Contact</span>{" "}
@@ -178,7 +195,7 @@ export default function ContactMe() {
 
               <button
                 type="submit"
-                disabled={isSubmitting} 
+                disabled={isSubmitting}
                 className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
@@ -188,7 +205,6 @@ export default function ContactMe() {
         </div>
 
         <div className="flex flex-col md:flex-row gap-6 mt-16 max-w-2xl mx-auto">
-          {/* ... (CV buttons bilkul same rahenge, inmein koi change nahi) */}
           <a
             href={CV}
             target="_blank"

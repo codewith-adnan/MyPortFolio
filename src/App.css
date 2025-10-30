@@ -40,3 +40,16 @@
 .read-the-docs {
   color: #888;
 }
+@keyframes toastLoader {
+  from {
+    width: 100%;
+  }
+  to {
+    width: 0%;
+  }
+}
+
+.animate-toastLoader {
+  animation: toastLoader 3s linear forwards;
+}
+
