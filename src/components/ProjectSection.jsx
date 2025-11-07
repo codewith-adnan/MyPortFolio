@@ -60,7 +60,6 @@ const projects = [
   },
 ];
 
-// Animation variants for each card based on its position
 const cardAnimationVariants = [
   { initial: { opacity: 0, x: 100 }, whileInView: { opacity: 1, x: 0 } }, // From Right
   { initial: { opacity: 0, y: 100 }, whileInView: { opacity: 1, y: 0 } }, // From Bottom

@@ -14,7 +14,7 @@ import {
   FaBusinessTime 
 } from "react-icons/fa";
 import { motion } from "framer-motion";
-import HeroImg from "../assets/Heroimg.jpeg";
+import HeroImg from "../assets/main.png";
 
 export default function HeroSection() {
   const phoneNumber = '03174103743'; 
@@ -30,17 +30,17 @@ export default function HeroSection() {
   };
 
   return (
-    <div className="bg-[#F8F7F1] min-h-screen flex flex-col items-center justify-center px-4 py-12 mt-8 overflow-x-hidden"> {/* Added overflow-x-hidden */}
+    <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12  overflow-x-hidden"
+         style={{ background: 'linear-gradient(to right, #faf7f7, #c1bcb5)' }}> 
       <div className="max-w-7xl w-full flex flex-col lg:grid lg:grid-cols-2 gap-12">
         
-        {/* --- LEFT COLUMN ANIMATED --- */}
         <motion.div
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8, ease: "easeInOut" }}
           viewport={{ once: true }}
         >
-          <h1 className="text-3xl md:text-4xl font-figtree font-bold text-[#032737] mb-4">
+          <h1 className="text-3xl md:text-4xl mt-8 font-figtree font-bold text-[#032737] mb-4">
             Hey There,
           </h1>
 
@@ -100,7 +100,6 @@ export default function HeroSection() {
           </div>
         </motion.div>
 
-        {/* --- RIGHT COLUMN ANIMATED --- */}
         <motion.div
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -108,7 +107,7 @@ export default function HeroSection() {
           viewport={{ once: true }}
           className="flex flex-col items-center justify-center gap-6"
         >
-          <div className="relative h-[400px] md:h-[500px] lg:h-[600px] flex justify-center">
+          <div className="relative h-[300px] mt-10 md:h-[400px] lg:h-[600px] flex justify-center">
             <img
               src={HeroImg}
               alt="Muhammad Adnan"

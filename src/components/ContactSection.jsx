@@ -9,7 +9,7 @@ import {
   FaCheckCircle,
   FaTimesCircle,
 } from "react-icons/fa";
-import ContactImg from "../assets/Heroimg.jpeg";
+import ContactImg from "../assets/contact.jpg";
 import CV from "../assets/Muhhamad Adnan.pdf";
 
 const contactDetails = [
