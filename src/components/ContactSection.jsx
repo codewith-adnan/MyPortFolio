@@ -1,7 +1,7 @@
-import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import React, { useRef, useState } from "react";
 import {
-  FaMapMarkerAlt,
+  FaMapMarkerAlt, // Keeping these imports in case you want to reintroduce icons later
   FaPhoneAlt,
   FaPaperPlane,
   FaGlobe,
@@ -9,9 +9,10 @@ import {
   FaCheckCircle,
   FaTimesCircle,
 } from "react-icons/fa";
-import ContactImg from "../assets/contact.jpg";
-import CV from "../assets/Muhhamad Adnan.pdf";
+import CV from "../assets/Muhhamad Adnan.pdf"; // Assuming CV path is correct
 
+// contactDetails is not actively used in the JSX to match the image,
+// but kept here as it was in your original code.
 const contactDetails = [
   {
     icon: <FaMapMarkerAlt />,
@@ -35,10 +36,25 @@ const contactDetails = [
   },
 ];
 
-export default function ContactMe() {
+const ContactMe = () => {
   const form = useRef();
   const [toast, setToast] = useState({ show: false, type: "", message: "" });
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const fade = {
+    opacity: 1,
+    transition: {
+      duration: 1.5,
+    },
+  };
+
+  const verticalLeft = {
+    opacity: 1,
+    y: 0,
+    transition: {
+      duration: 1.5,
+    },
+  };
 
   const showToast = (type, message) => {
     setToast({ show: true, type, message });
@@ -73,7 +89,10 @@ export default function ContactMe() {
         showToast("success", result.message || "Message Sent Successfully!");
         e.target.reset();
       } else {
-        showToast("error", result.message || "Something went wrong. Please try again.");
+        showToast(
+          "error",
+          result.message || "Something went wrong. Please try again."
+        );
       }
     } catch (error) {
       console.error("Fetch error:", error);
@@ -84,18 +103,19 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="contact" className="bg-[#F8F7F1] text-white py-20"
-    style={{ background: 'linear-gradient(to left, #faf7f7, #c1bcb5)' }}
-    >
-      {/* ✅ Toast Notification */}
+    <section
+      id="contact"
+      className="py-10 text-gray-300 min-h-screen relative"
+ style={{ background: 'linear-gradient(to right, #faf7f7, #c1bcb5)' }}
+>
+      
+
       {toast.show && (
         <div
-          className={`fixed top-5 right-5 flex flex-col gap-2 border rounded-lg shadow-md px-4 py-2 
-          bg-gray-600 text-gray-200 transition-all duration-600 z-50 w-[280px]
+          className={`fixed top-5 right-5 flex flex-col gap-2 border rounded-lg shadow-md px-4 py-2
+          bg-gray-700 text-gray-200 transition-all duration-600 z-50 w-[280px]
           ${
-            toast.type === "success"
-              ? "border-green-400"
-              : "border-[#f05228]"
+            toast.type === "success" ? "border-green-400" : "border-[#f05228]"
           }`}
         >
           <div className="flex items-center gap-3">
@@ -107,8 +127,7 @@ export default function ContactMe() {
             <span>{toast.message}</span>
           </div>
 
-          {/* ⚡ Bottom Loader Bar */}
-          <div className="relative w-full h-[3px] bg-gray-500 overflow-hidden rounded-full">
+          <div className="relative w-full h-[3px] bg-gray-600 overflow-hidden rounded-full">
             <div
               className={`absolute top-0 left-0 h-full ${
                 toast.type === "success" ? "bg-green-400" : "bg-[#f05228]"
@@ -118,90 +137,128 @@ export default function ContactMe() {
         </div>
       )}
 
-      {/* 🔹 Contact Section */}
-      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="text-center mb-16">
-          <h2 className="text-4xl font-bold font-figtree">
-            <span className="text-gray-400">Contact</span>{" "}
-            <span className="text-[#f05228]">Me</span>
-          </h2>
-          <p className="text-gray-400 mt-4 max-w-2xl mx-auto">
-            "Have a project or idea in mind? Feel free to contact me—let's build
-            something amazing together"
+      <div className="container max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <motion.div
+          className="text-center mb-16 pt-16" 
+          initial={{ opacity: 0 }}
+          whileInView={fade}
+          viewport={{ once: true }}
+        >
+          <p className="text-gray-400 text-4xl font-bold font-['Poppins'] mt-[-3rem] ">
+            Get in <span className="text-[#f05228]">Touch</span>
           </p>
-        </div>
+        </motion.div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-20">
-          {contactDetails.map((item, index) => (
-            <div key={index} className="flex flex-col items-center text-center">
-              <div
-                className="w-20 h-20 bg-white rounded-full flex items-center justify-center mb-4
-                           border-2 border-transparent hover:border-orange-500 transition-all duration-300"
-              >
-                <div className="text-4xl text-[#f05228]">{item.icon}</div>
-              </div>
-              <h3 className="text-lg font-bold uppercase text-gray-600 mb-2 font-figtree">
-                {item.title}
-              </h3>
-              <p className="text-gray-400 font-figtree">{item.detail}</p>
-            </div>
-          ))}
-        </div>
+        <div className="grid grid-cols-1  md:grid-cols-2 gap-10 lg:gap-20 items-start">
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
+          
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            className="left-section"
+            initial={{ opacity: 0, y: "-50px" }}
+            whileInView={verticalLeft}
             viewport={{ once: true }}
           >
-            <img
-              src={ContactImg}
-              alt="Contact"
-              className="w-full h-full max-h-[500px] object-cover rounded-2xl shadow-lg"
-            />
+            <motion.p
+        className=" text-gray-400 text-2xl mb-2 font-medium" 
+        initial={{ opacity: 0 }}
+        whileInView={fade}
+        viewport={{ once: true }}
+      >
+        Hire Me
+      </motion.p>
+            <div className="mb-8">
+              <p className="text-gray-400 text-base text-justify  leading-relaxed">
+                I’m interested in freelance opportunities – especially ambitious
+                or large projects. However, if you have other request or
+                question, don’t hesitate to use the form.
+              </p>
+            </div>
+            <div className="say-hello">
+              <p className="text-gray-400 text-xl font-semibold mb-4 uppercase tracking-wider">
+                Say Hello
+              </p>
+              <a
+                className="text-gray-400 hover:text-[#f05228] transition-colors duration-300 block mb-2"
+                href="//wa.me/03048008316"
+                target="_blank"
+                rel="noreferrer"
+              >
+                wa.me/adnan
+              </a>
+              <a
+                className="text-gray-400 hover:text-[#f05228] transition-colors duration-300 block mb-2"
+                href="mailto:sendtomadnan@gmail.com"
+                target="_blank"
+                rel="noreferrer"
+              >
+                sendtomadnan@gmail.com
+              </a>
+            </div>
           </motion.div>
 
           <motion.div
-            initial={{ opacity: 0, x: 50 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8 }}
+            className="right-section  p-8 rounded-lg mt-[-2rem]" 
+            initial={{ opacity: 0, y: "50px" }}
+            whileInView={verticalLeft}
             viewport={{ once: true }}
-            className="bg-white shadow-lg rounded-2xl p-8"
           >
-            <h3 className="text-2xl font-bold text-gray-600 mb-6 font-figtree">
+            <h3 className="text-2xl font-bold text-gray-500 mb-6 font-['Poppins']">
               Send Me a Message
             </h3>
-            <form ref={form} onSubmit={sendEmail} className="space-y-5">
-              <input
-                type="text"
-                name="name"
-                placeholder="Your Name"
-                required
-                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
-              />
-              <input
-                type="email"
-                name="email"
-                placeholder="Your Email"
-                required
-                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
-              />
-              <textarea
-                name="message"
-                rows="5"
-                placeholder="Your Message"
-                required
-                className="w-full bg-[#F8F7F1] text-gray-400 border border-gray-600 rounded-lg px-4 py-3 focus:ring-2 outline-none"
-              ></textarea>
+            <form ref={form} onSubmit={sendEmail} className="space-y-6">
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div>
+                  <label htmlFor="name" className="block text-gray-400 text-sm font-medium mb-1">
+                    Your Name
+                  </label>
+                  <input
+                    type="text"
+                    name="name"
+                    id="name"
+                    placeholder="Enter your name"
+                    required
+                    className="w-full bg-transparent text-gray-400 border-b border-gray-600 focus:border-[#f05228] outline-none px-0 py-2 placeholder-gray-500 transition-colors duration-300"
+                  />
+                </div>
 
-              <button
-                type="submit"
-                disabled={isSubmitting}
-                className="w-full bg-[#f05228] text-white py-3 rounded-lg font-semibold hover:bg-gray-800 transition disabled:opacity-50 disabled:cursor-not-allowed"
-              >
-                {isSubmitting ? "Sending..." : "Send Message"}
-              </button>
+                <div>
+                  <label htmlFor="email" className="block text-gray-400 text-sm font-medium mb-1">
+                    Your Email
+                  </label>
+                  <input
+                    type="email"
+                    name="email"
+                    id="email"
+                    placeholder="Enter your email address"
+                    required
+                    className="w-full bg-transparent text-gray-400 border-b border-gray-600 focus:border-[#f05228] outline-none px-0 py-2 placeholder-gray-500 transition-colors duration-300"
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label htmlFor="message" className="block text-gray-400 text-sm font-medium ">
+                  Your message
+                </label>
+                <textarea
+                  name="message"
+                  id="message"
+                  rows="5"
+                  placeholder="Hi, I think I need you to work on this particular product.Reach out as soon as you can"
+                  required
+                  className="w-full bg-transparent text-gray-400 border-b border-gray-600 focus:border-[#f05228] outline-none px-0 py-2 resize-none placeholder-gray-500 transition-colors duration-300"
+                ></textarea>
+              </div>
+
+              <div className="text-center md:text-left">
+                <button
+                  type="submit"
+                  disabled={isSubmitting}
+                  className="bg-transparent text-[#f05228] border border-[#f05228] py-3 px-10 rounded-full font-semibold hover:bg-[#f05228] hover:text-white transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed"
+                >
+                  {isSubmitting ? "Sending..." : "Send Message"}
+                </button>
+              </div>
             </form>
           </motion.div>
         </div>
@@ -211,7 +268,7 @@ export default function ContactMe() {
             href={CV}
             target="_blank"
             rel="noopener noreferrer"
-            className="flex-1 bg-gray-800 text-white py-3 rounded-lg font-semibold text-center hover:bg-[#f05228] transition"
+            className="flex-1 bg-gray-700 text-white py-3 rounded-full font-semibold text-center hover:bg-[#f05228] transition-all duration-300 flex items-center justify-center"
           >
             <FaDownload className="inline mr-2" />
             View CV
@@ -219,7 +276,7 @@ export default function ContactMe() {
           <a
             href={CV}
             download
-            className="flex-1 bg-[#f05228] text-white py-3 rounded-lg font-semibold text-center hover:bg-gray-800 transition"
+            className="flex-1 bg-[#f05228] text-white py-3 rounded-full font-semibold text-center hover:bg-gray-700 transition-all duration-300 flex items-center justify-center"
           >
             <FaDownload className="inline mr-2" />
             Download CV
@@ -228,4 +285,6 @@ export default function ContactMe() {
       </div>
     </section>
   );
-}
+};
+
+export default ContactMe;
