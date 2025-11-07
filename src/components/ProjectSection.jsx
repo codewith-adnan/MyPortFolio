@@ -7,6 +7,7 @@ import Img2 from "../assets/giftcarsite.PNG";
 import Img3 from "../assets/delivery.PNG";
 import Img4 from "../assets/realtask.PNG";
 import Img5 from "../assets/Capture.PNG"; 
+import Img6 from "../assets/live project.PNG";
 
 const projects = [
   {
@@ -47,6 +48,14 @@ const projects = [
     description: "A dynamic landing page with real-time functionality for advertisement purposes, built with React and Tailwind CSS to meet customer requirements.",
     image: Img5,
     link: "https://wearethogether.vercel.app/",
+    status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
+  },
+  {
+    id: 6,
+    title: "Rp Solutions Web Page",
+    description: "This project is a dynamic Real-Time Ad Landing Page built with React.js and Tailwind CSS. It leverages GSAP and Framer Motion to deliver live data visualization and an engaging user experience, designed to enhance business advertising efforts.",
+    image: Img6,
+    link: "https://rp-solutions-xi.vercel.app/",
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
 ];
