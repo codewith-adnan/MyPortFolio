@@ -43,7 +43,6 @@ const experienceData = [
   },
 ];
 
-// Card component ko motion component mein convert kiya gaya hai
 const ResumeCard = motion(({ date, title, institution, description }) => (
   <div className="bg-white rounded-xl p-8 shadow-lg text-left 
                   hover:shadow-2xl hover:scale-105 transition-all duration-300 cursor-pointer">
@@ -77,7 +76,9 @@ const cardVariants = {
 
 export default function Resume() {
   return (
-    <section id="resume" className="bg-[#F8F7F1] py-20 overflow-hidden">
+    <section id="resume" className=" py-20 overflow-hidden"
+    style={{ background: 'linear-gradient(to right, #faf7f7, #c1bcb5)' }}
+    >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* --- TITLE ANIMATED --- */}
         <motion.div

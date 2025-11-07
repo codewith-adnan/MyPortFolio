@@ -74,7 +74,7 @@ export default function HeroSection() {
           </p>
 
           <a href="#contact">
-            <button className="bg-[#f05228] font-figtree text-white text-[20px] font-semibold px-6 py-3 rounded shadow-md border-2 border-transparent hover:bg-gray-800 transition duration-300 mt-[-10px]">
+            <button className="bg-[#f05228] font-figtree text-white text-[20px] font-semibold px-4 py-2 rounded shadow-md border-2 border-transparent hover:bg-gray-800 transition duration-300 mt-[-10px]">
               Contact Me
             </button>
           </a>

@@ -46,7 +46,6 @@ export default function Navbar() {
         style={{ 
           background: 'linear-gradient(to right, #faf7f7, #c1bcb5)', // Your gradient color
           backdropFilter: 'brightness(1.1) saturate(1.2)', // Added for glass shining effect
-          // border: '1px solid rgba(255, 255, 255, 0.2)' // Optional: subtle border for glass effect
         }}
       >
         <div className="max-w-full mx-auto px-2 sm:px-4 lg:px-6"> 

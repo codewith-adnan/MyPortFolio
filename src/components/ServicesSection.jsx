@@ -41,7 +41,9 @@ const itemVariants = {
 
 export default function ServicesSection() {
   return (
-    <section id="services" className="bg-[#F8F7F1] text-center py-20 px-6 overflow-hidden">
+    <section id="services" className=" text-center py-20 px-6 overflow-hidden"
+    style={{ background: 'linear-gradient(to right, #faf7f7, #c1bcb5)' }}
+    >
       {/* Title */}
       <div className="mb-12">
         {/* --- TITLE ANIMATED --- */}

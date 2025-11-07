@@ -84,7 +84,9 @@ export default function ContactMe() {
   };
 
   return (
-    <section id="contact" className="bg-[#F8F7F1] text-white py-20">
+    <section id="contact" className="bg-[#F8F7F1] text-white py-20"
+    style={{ background: 'linear-gradient(to left, #faf7f7, #c1bcb5)' }}
+    >
       {/* ✅ Toast Notification */}
       {toast.show && (
         <div
