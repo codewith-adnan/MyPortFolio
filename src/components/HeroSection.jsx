@@ -18,16 +18,11 @@ import HeroImg from "../assets/main.png";
 
 export default function HeroSection() {
   const phoneNumber = '03174103743'; 
-  const [tooltipText, setTooltipText] = useState('Click to copy');
+  // No longer need tooltipText or handleCopy if direct call is preferred,
+  // but keeping them for now in case you want to revert or use for other icons.
+  const [tooltipText, setTooltipText] = useState('Click to copy'); 
 
-  const handleCopy = () => {
-    navigator.clipboard.writeText(phoneNumber).then(() => {
-      setTooltipText('Copied!');
-      setTimeout(() => {
-        setTooltipText('Click to copy');
-      }, 2000); 
-    });
-  };
+  // Removed handleCopy function as we're now directly calling
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12  overflow-x-hidden"
@@ -79,18 +74,18 @@ export default function HeroSection() {
             </button>
           </a>
 
-          <div className="flex space-x-6 mt-6">
-            <div className="relative group">
-              <button
-                onClick={handleCopy}
-                className="w-14 h-14 bg-white rounded-full shadow-md border-2 border-transparent hover:bg-[#f05228] transition duration-300 flex items-center justify-center group"
-              >
-                <FaPhoneAlt className="text-2xl text-gray-700 group-hover:text-white transition duration-300" />
-              </button>
-              <span className="absolute bottom-full left-1/2 -translate-x-1/2 mb-2 bg-gray-700 text-white text-xs rounded py-1 px-2 opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap">
-                {tooltipText}
-              </span>
-            </div>
+          <div className="flex space-x-6 mt-4">
+            {/* --- MODIFIED PHONE ICON LINK --- */}
+            <a 
+              href={`tel:${phoneNumber}`} // Changed to an <a> tag with tel:
+              className="w-14 h-14 bg-white rounded-full shadow-md border-2 border-transparent hover:bg-[#f05228] transition duration-300 flex items-center justify-center group"
+              // The tooltip functionality will no longer be relevant for direct call,
+              // but you can keep the group class for hover effects.
+            >
+              <FaPhoneAlt className="text-2xl text-gray-700 group-hover:text-white transition duration-300" />
+            </a>
+            {/* --- TOOLTIP REMOVED (as it's a direct call now) --- */}
+            {/* Keeping LinkedIn and WhatsApp as they were */}
             <a href="https://www.linkedin.com/in/muhammad-adnan-19ba34378" target="_blank" rel="noreferrer" className="w-14 h-14 bg-white rounded-full shadow-md border-2 border-transparent hover:bg-[#f05228] transition duration-300 flex items-center justify-center group">
               <FaLinkedin className="text-2xl text-gray-700 group-hover:text-white transition duration-300" />
             </a>
