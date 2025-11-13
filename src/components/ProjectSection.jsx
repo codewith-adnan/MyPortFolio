@@ -8,6 +8,7 @@ import Img3 from "../assets/delivery.PNG";
 import Img4 from "../assets/realtask.PNG";
 import Img5 from "../assets/Capture.PNG"; 
 import Img6 from "../assets/live project.PNG";
+import Img7 from "../assets/Capture 7.PNG";
 
 const projects = [
   {
@@ -56,6 +57,14 @@ const projects = [
     description: "This project is a dynamic Real-Time Ad Landing Page built with React.js and Tailwind CSS. It leverages GSAP and Framer Motion to deliver live data visualization and an engaging user experience, designed to enhance business advertising efforts.",
     image: Img6,
     link: "https://rp-solutions-xi.vercel.app/",
+    status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
+  },
+  {
+    id: 7,
+    title: "Digital Marketing Portfolio ",
+    description: "“Built a responsive and visually engaging digital marketing portfolio using React, CSS, and Framer Motion deployed on Vercel for a global reach & fully based on cleint requirements.”",
+    image: Img7,
+    link: "https://digitalmarketing-lac.vercel.app/",
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
 ];
