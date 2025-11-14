@@ -14,7 +14,7 @@ const projects = [
   {
     id: 1,
     title: "Car Rental System",
-    description: "Complete car rental booking platform built with React & Styled Components.",
+    description: "Complete car rental booking platform built with React & Styled Components as per figma design.",
     image: Img1,
     link: "https://carrental5.netlify.app/",
     status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
@@ -78,9 +78,8 @@ const cardAnimationVariants = [
 export default function ProjectSection() {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto overflow-hidden" id="projects">
-      {/* Section Heading */}
+     
       <div className="text-center mb-10">
-        {/* --- TITLE ANIMATED --- */}
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -92,7 +91,6 @@ export default function ProjectSection() {
           <span className="text-[#f05228]">My Work</span>
         </motion.h1>
 
-        {/* --- SUBTITLE ANIMATED --- */}
         <motion.p
           initial={{ opacity: 0, x: 100 }}
           whileInView={{ opacity: 1, x: 0 }}
@@ -104,13 +102,10 @@ export default function ProjectSection() {
         </motion.p>
       </div>
 
-      {/* Project Cards */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {projects.map((project, index) => (
-          // --- CARD ANIMATED ---
           <motion.div
             key={project.id}
-            // Selects the animation variant based on index (0, 1, or 2)
             initial={cardAnimationVariants[index % 3].initial}
             whileInView={cardAnimationVariants[index % 3].whileInView}
             transition={{ duration: 0.8, ease: "easeOut" }}
