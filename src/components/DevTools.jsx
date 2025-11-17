@@ -5,11 +5,11 @@ import { motion } from "framer-motion";
 // Make sure these paths are correct relative to THIS component file.
 // For example, if DevTools.jsx is in src/components, and your assets are in src/assets:
 import tailwindLogo from '../assets/tailwind css.jpg'; // Assuming 'tailwind css.jpg' is the correct filename
-import vercelLogo from '../assets/vercel.png';
-import netlifyLogo from '../assets/netlify.png'; // Check the file extension if it's .png or .svg
+import vercelLogo from '../assets/123.png';
+import netlifyLogo from '../assets/12345.png'; // Check the file extension if it's .png or .svg
 import hostingerLogo from '../assets/hostinger.png';
 import namecheapLogo from '../assets/namecheap.svg';
-import awsLogo from '../assets/aws.png';
+import awsLogo from '../assets/download.png';
 
 // Tools data with CDN logos (same as before)
 const tools = [
