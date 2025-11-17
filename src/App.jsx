@@ -7,6 +7,7 @@ import AboutMe from "./components/AboutMe"
 import Resume from "./components/Resume"
 import Navbar from "./components/Navbar"
 import Footer from "./components/Footer"
+import DevTools from "./components/DevTools"
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
       <ProjectSection/>
       <ServicesSection/>
       <MySkills/>
+      <DevTools/>
       <ContactSection/>
       </main>
       <Footer/>
