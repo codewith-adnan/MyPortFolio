@@ -103,11 +103,11 @@ export default function DevTools() {
                 alt={tool.name}
                 width={currentLogoSize}
                 height={currentLogoSize}
-                className="rounded-full p-2 bg-gradient-to-br from-gray-800 to-gray-900 shadow-lg border border-gray-700
-                           group-hover:from-fuchsia-600 group-hover:to-cyan-500 group-hover:border-white transition-all duration-300"
+                className="rounded-full p-2 bg-gradient-to-br from-gray-200 to-gray-300 shadow-lg border border-gray-400
+                           group-hover:from-orange-500 group-hover:to-orange-400 group-hover:border-white transition-all duration-300"
                 title={tool.name}
               />
-              <span className="absolute -bottom-6 text-xs text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
+              <span className="absolute -bottom-6 text-xs text-gray-800 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none whitespace-nowrap">
                 {tool.name}
               </span>
             </motion.div>
@@ -127,7 +127,7 @@ export default function DevTools() {
       {Array.from({ length: 150 }).map((_, i) => (
         <motion.div
           key={i}
-          className="absolute rounded-full bg-cyan-400 opacity-20"
+          className="absolute rounded-full bg-orange-300 opacity-20"
           style={{
             width: Math.random() * 3 + 1, // Random size
             height: Math.random() * 3 + 1,
@@ -157,16 +157,16 @@ export default function DevTools() {
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut" }}
-          className="text-2xl sm:text-3xl font-extrabold text-#f05228 mb-4 drop-shadow-lg text-center"
+          className="text-2xl sm:text-3xl font-bold mb-4 drop-shadow-lg text-center"
         >
-          <span className="text-gray-600">My</span>{" "}
-          <span className="text-#f05228">Dev Tools</span>
+          <span className="text-gray-800">My</span>{" "}
+          <span style={{ color: '#f05228' }}>Dev Tools</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, ease: "easeOut", delay: 0.2 }}
-          className="text-gray-600 text-m sm:text-lg mb-12 text-center max-w-md"
+          className="text-gray-700 text-lg sm:text-xl mb-12 text-center max-w-md"
         >
           Crafting modern & scalable solutions with these technologies.
         </motion.p>
@@ -178,19 +178,20 @@ export default function DevTools() {
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut" }}
-            className="absolute rounded-full bg-gray-300 blur-2xl opacity-30 w-24 h-24 sm:w-32 sm:h-32"
+            className="absolute rounded-full blur-2xl opacity-30 w-16 h-16 sm:w-32 sm:h-32"
+            style={{ backgroundColor: '#f05228' }}
           ></motion.div>
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, ease: "easeOut", delay: 0.2 }}
-            className="absolute rounded-full bg-cyan-500 blur-2xl opacity-30 w-24 h-24 sm:w-32 sm:h-32"
+            className="absolute rounded-full bg-cyan-500 blur-2xl opacity-30 w-16 h-16 sm:w-32 sm:h-32"
           ></motion.div>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             transition={{ duration: 1, delay: 0.4 }}
-            className="absolute text-gray-600 font-bold text-xl sm:text-2xl z-10"
+            className="absolute text-gray-900 font-bold text-xl sm:text-2xl z-10"
           >
             Stack
           </motion.div>
@@ -200,12 +201,12 @@ export default function DevTools() {
           {renderOrbit(orbit2Tools, currentRadius2, 40, -1)}     {/* Middle orbit, slower, reverse direction */}
           {renderOrbit(orbit3Tools, currentRadius3, 60, 1)}      {/* Outer orbit, slowest */}
 
-          
+          {/* Connecting Lines (optional, can be added within renderOrbit or here) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 1, delay: 0.6 }}
-            className="absolute rounded-full border border-dashed border-gray-400 opacity-50"
+            className="absolute rounded-full border border-dashed border-gray-500 opacity-50"
             style={{
               width: currentRadius3 * 2 + currentLogoSize,
               height: currentRadius3 * 2 + currentLogoSize,
