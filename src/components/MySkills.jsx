@@ -5,10 +5,19 @@ export default function MySkills() {
   const skills = [
     { name: "React Js", percentage: 85 },
     { name: "Vue Js", percentage: 45 },
+     { name: "Next js", percentage: 45 },
+     { name: "Angular", percentage: 45 },
+    { name: "HTML5", percentage: 90 },
     { name: "Video Editing", percentage: 70 },
     { name: "Java Script", percentage: 65 },
     { name: "Type Script", percentage: 75 },
-    { name: "Dev Tools", percentage: 70 },
+        { name: "Digital Marketing", percentage: 80 },
+            { name: "Material UI", percentage: 75 },
+    { name: "BootStrap", percentage: 80 },
+            
+
+
+
   ];
 
   return (

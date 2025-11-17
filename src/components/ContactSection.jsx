@@ -9,7 +9,7 @@ import {
   FaCheckCircle,
   FaTimesCircle,
 } from "react-icons/fa";
-import CV from "../assets/Muhhamad Adnan.pdf"; // Assuming CV path is correct
+import CV from "../assets/Muhammad Adnan.pdf"; // Assuming CV path is correct
 
 // contactDetails is not actively used in the JSX to match the image,
 // but kept here as it was in your original code.
