@@ -35,12 +35,7 @@ const experienceData = [
     institution: "Builtinsoft",
     description: "A React JS developer with hands-on experience in building responsive, scalable web applications using Java Script,Type Script,Styled Components,Taillwind CSS,SCSS , API Integration ,Redux & working in real time production level project UMS(University Management System). ",
   },
-  {
-    date: null,
-    title: "Dev Tools",
-    institution: "Proficient In",
-    description: "Redux, Git, GitHub, Swagger, Postman, Netlify,Docker , Vercel,GitLab",
-  },
+
 ];
 
 const ResumeCard = motion(({ date, title, institution, description }) => (
