@@ -80,7 +80,6 @@ export default function Resume() {
     style={{ background: 'linear-gradient(to right, #faf7f7, #c1bcb5)' }}
     >
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* --- TITLE ANIMATED --- */}
         <motion.div
           initial={{ opacity: 0, y: -50 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -98,7 +97,6 @@ export default function Resume() {
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          {/* --- EDUCATION COLUMN ANIMATED --- */}
           <motion.div 
             className="space-y-8"
             initial="hidden"
@@ -110,7 +108,6 @@ export default function Resume() {
               <ResumeCard key={`edu-${index}`} {...item} variants={cardVariants} />
             ))}
           </motion.div>
-          {/* --- EXPERIENCE COLUMN ANIMATED --- */}
           <motion.div 
             className="space-y-8"
             initial="hidden"
@@ -124,7 +121,7 @@ export default function Resume() {
           </motion.div>
         </div>
 
-        {/* --- CV BUTTON ANIMATED --- */}
+       
         <motion.div
           initial={{ opacity: 0, x: 100, y: 50 }}
           whileInView={{ opacity: 1, x: 0, y: 0 }}
@@ -133,7 +130,7 @@ export default function Resume() {
           className="text-center mt-16"
         >
           <a
-            href="/Muhhamad Adnan.pdf" // Path theek kiya gaya hai
+            href="/Muhhamad Adnan.pdf" 
             download
             className="bg-[#f05228] text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-all duration-300 inline-block"
           >

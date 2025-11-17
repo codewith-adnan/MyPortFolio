@@ -1,6 +1,16 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
+// Import local images
+// Make sure these paths are correct relative to THIS component file.
+// For example, if DevTools.jsx is in src/components, and your assets are in src/assets:
+import tailwindLogo from '../assets/tailwind css.jpg'; // Assuming 'tailwind css.jpg' is the correct filename
+import vercelLogo from '../assets/vercel.png';
+import netlifyLogo from '../assets/netlify.png'; // Check the file extension if it's .png or .svg
+import hostingerLogo from '../assets/hostinger.png';
+import namecheapLogo from '../assets/namecheap.svg';
+import awsLogo from '../assets/aws.png';
+
 // Tools data with CDN logos (same as before)
 const tools = [
   { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", category: "frontend" },
@@ -24,6 +34,13 @@ const tools = [
   { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg", category: "styling" },
   { name: "Material UI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", category: "styling" },
   { name: "Swagger", logo: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg", category: "api_dev" },
+  // Local images - now using imported variables
+  { name: "Tailwind CSS", logo: tailwindLogo, category: "styling" },
+  { name: "Vercel", logo: vercelLogo, category: "hosting" },
+  { name: "Netlify", logo: netlifyLogo, category: "hosting" },
+  { name: "Hostinger", logo: hostingerLogo, category: "hosting" },
+  { name: "Namecheap", logo: namecheapLogo, category: "domain" },
+  { name: "AWS", logo: awsLogo, category: "cloud" },
 ];
 
 export default function DevTools() {
@@ -99,7 +116,7 @@ export default function DevTools() {
               whileHover={{ scale: 1.2, zIndex: 10 }} // Hover effect
             >
               <img
-                src={tool.logo}
+                src={tool.logo} // This will now correctly use the imported image URL
                 alt={tool.name}
                 width={currentLogoSize}
                 height={currentLogoSize}
