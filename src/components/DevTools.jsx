@@ -1,17 +1,14 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 
-// Import local images
-// Make sure these paths are correct relative to THIS component file.
-// For example, if DevTools.jsx is in src/components, and your assets are in src/assets:
-import tailwindLogo from '../assets/tailwind css.jpg'; // Assuming 'tailwind css.jpg' is the correct filename
+
+import tailwindLogo from '../assets/tailwind css.jpg'; 
 import vercelLogo from '../assets/123.png';
-import netlifyLogo from '../assets/12345.png'; // Check the file extension if it's .png or .svg
+import netlifyLogo from '../assets/12345.png'; 
 import hostingerLogo from '../assets/hostinger.png';
 import namecheapLogo from '../assets/namecheap.svg';
 import awsLogo from '../assets/download.png';
 
-// Tools data with CDN logos (same as before)
 const tools = [
   { name: "React", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg", category: "frontend" },
   { name: "TypeScript", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg", category: "language" },
@@ -34,7 +31,6 @@ const tools = [
   { name: "Bootstrap", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg", category: "styling" },
   { name: "Material UI", logo: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/materialui/materialui-original.svg", category: "styling" },
   { name: "Swagger", logo: "https://static1.smartbear.co/swagger/media/assets/images/swagger_logo.svg", category: "api_dev" },
-  // Local images - now using imported variables
   { name: "Tailwind CSS", logo: tailwindLogo, category: "styling" },
   { name: "Vercel", logo: vercelLogo, category: "hosting" },
   { name: "Netlify", logo: netlifyLogo, category: "hosting" },
@@ -44,13 +40,11 @@ const tools = [
 ];
 
 export default function DevTools() {
-  // State for responsive radius and logo sizes
-  const [currentRadius1, setCurrentRadius1] = useState(80); // Inner circle
-  const [currentRadius2, setCurrentRadius2] = useState(150); // Middle circle
-  const [currentRadius3, setCurrentRadius3] = useState(220); // Outer circle
+  const [currentRadius1, setCurrentRadius1] = useState(80); 
+  const [currentRadius2, setCurrentRadius2] = useState(150); 
+  const [currentRadius3, setCurrentRadius3] = useState(220); 
   const [currentLogoSize, setCurrentLogoSize] = useState(40);
 
-  // Split tools into categories or distribute evenly for different orbits
   const orbit1Tools = tools.slice(0, Math.floor(tools.length / 3));
   const orbit2Tools = tools.slice(Math.floor(tools.length / 3), Math.floor(2 * tools.length / 3));
   const orbit3Tools = tools.slice(Math.floor(2 * tools.length / 3));
@@ -140,25 +134,24 @@ export default function DevTools() {
       className="relative flex min-h-screen items-center justify-center overflow-hidden py-10 sm:py-20"
       style={{ background: 'linear-gradient(to top, #faf7f7, #c1bcb5)' }}
     >
-      {/* Background Particles - more dynamic */}
       {Array.from({ length: 150 }).map((_, i) => (
         <motion.div
           key={i}
           className="absolute rounded-full bg-orange-300 opacity-20"
           style={{
-            width: Math.random() * 3 + 1, // Random size
+            width: Math.random() * 3 + 1, 
             height: Math.random() * 3 + 1,
             top: Math.random() * 100 + "%",
             left: Math.random() * 100 + "%",
           }}
           animate={{
-            x: Math.random() * 200 - 100, // Move randomly
+            x: Math.random() * 200 - 100, 
             y: Math.random() * 200 - 100,
             opacity: [0, 0.2, 0],
             scale: [0.5, 1.2, 0.5],
           }}
           transition={{
-            duration: Math.random() * 10 + 5, // Random duration
+            duration: Math.random() * 10 + 5, 
             repeat: Infinity,
             repeatType: "reverse",
             delay: Math.random() * 5,
