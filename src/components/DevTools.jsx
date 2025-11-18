@@ -107,10 +107,10 @@ export default function DevTools() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: index * 0.08, duration: 0.5 }}
-              whileHover={{ scale: 1.2, zIndex: 10 }} // Hover effect
+              whileHover={{ scale: 1.2, zIndex: 10 }} 
             >
               <img
-                src={tool.logo} // This will now correctly use the imported image URL
+                src={tool.logo} 
                 alt={tool.name}
                 width={currentLogoSize}
                 height={currentLogoSize}
@@ -170,7 +170,7 @@ export default function DevTools() {
           className="text-2xl sm:text-3xl font-bold mb-4 drop-shadow-lg text-center"
         >
           <span className="text-gray-800">My</span>{" "}
-          <span style={{ color: '#f05228' }}>Dev Tools</span>
+          <span style={{ color: '#f05228' }}>DEV TOOLS</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
