@@ -160,9 +160,9 @@ export default function DevTools() {
         />
       ))}
 
-      {/* Main content container */}
+      
       <div className="relative z-10 w-full max-w-7xl px-4 flex flex-col items-center justify-center">
-        {/* Title and Subtitle */}
+        
         <motion.h2
           initial={{ opacity: 0, y: -50 }}
           animate={{ opacity: 1, y: 0 }}
@@ -181,9 +181,9 @@ export default function DevTools() {
           Crafting modern & scalable solutions with these technologies.
         </motion.p>
 
-        {/* The rotating orbital tools container */}
+        
         <div className="relative w-[300px] h-[300px] sm:w-[600px] sm:h-[600px] flex items-center justify-center">
-          {/* Central glowing core */}
+         
           <motion.div
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -206,12 +206,10 @@ export default function DevTools() {
             Stack
           </motion.div>
 
-          {/* Render the three orbits */}
-          {renderOrbit(orbit1Tools, currentRadius1, 25, 1)}      {/* Inner orbit, faster */}
-          {renderOrbit(orbit2Tools, currentRadius2, 40, -1)}     {/* Middle orbit, slower, reverse direction */}
-          {renderOrbit(orbit3Tools, currentRadius3, 60, 1)}      {/* Outer orbit, slowest */}
+          {renderOrbit(orbit1Tools, currentRadius1, 25, 1)}      
+          {renderOrbit(orbit2Tools, currentRadius2, 40, -1)}     
+          {renderOrbit(orbit3Tools, currentRadius3, 60, 1)}      
 
-          {/* Connecting Lines (optional, can be added within renderOrbit or here) */}
           <motion.div
             initial={{ opacity: 0, scale: 0.5 }}
             animate={{ opacity: 1, scale: 1 }}

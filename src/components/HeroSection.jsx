@@ -18,11 +18,9 @@ import HeroImg from "../assets/main.png";
 
 export default function HeroSection() {
   const phoneNumber = '03174103743'; 
-  // No longer need tooltipText or handleCopy if direct call is preferred,
-  // but keeping them for now in case you want to revert or use for other icons.
+  
   const [tooltipText, setTooltipText] = useState('Click to copy'); 
 
-  // Removed handleCopy function as we're now directly calling
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center px-4 py-12  overflow-x-hidden"
