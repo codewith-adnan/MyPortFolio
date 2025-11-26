@@ -170,7 +170,7 @@ export default function DevTools() {
           className="text-2xl sm:text-3xl font-bold mb-4 drop-shadow-lg text-center"
         >
           <span className="text-gray-800">My</span>{" "}
-          <span style={{ color: '#f05228' }}>DEV TOOLS</span>
+          <span style={{ color: '#f05228' }}>Dev Tools</span>
         </motion.h2>
         <motion.p
           initial={{ opacity: 0, y: 50 }}
