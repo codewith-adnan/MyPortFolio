@@ -167,7 +167,7 @@ const ContactMe = () => {
         Hire Me
       </motion.p>
             <div className="mb-8">
-              <p className="text-gray-400 text-base text-justify  leading-relaxed">
+              <p className="text-gray-500 text-base text-justify  leading-relaxed">
                 I’m interested in freelance opportunities – especially ambitious
                 or large projects. However, if you have other request or
                 question, don’t hesitate to use the form.
@@ -178,7 +178,7 @@ const ContactMe = () => {
                 Say Hello
               </p>
               <a
-                className="text-gray-400 hover:text-[#f05228] transition-colors duration-300 block mb-2"
+                className="text-gray-500 hover:text-[#f05228] transition-colors duration-300 block mb-2"
                 href="//wa.me/03048008316"
                 target="_blank"
                 rel="noreferrer"
@@ -186,7 +186,7 @@ const ContactMe = () => {
                 wa.me/adnan
               </a>
               <a
-                className="text-gray-400 hover:text-[#f05228] transition-colors duration-300 block mb-2"
+                className="text-gray-500 hover:text-[#f05228] transition-colors duration-300 block mb-2"
                 href="mailto:sendtomadnan@gmail.com"
                 target="_blank"
                 rel="noreferrer"
