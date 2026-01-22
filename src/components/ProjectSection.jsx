@@ -67,6 +67,18 @@ const projects = [
     link: "https://digitalmarketing-lac.vercel.app/",
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
+  {
+  id: 8,
+  title: "TaskUbr – SaaS Project",
+  description: "Built a modern SaaS web application using Next.js and Tailwind CSS. Currently under development with active team collaboration. I am working as a Frontend Developer, focusing on responsive UI, performance, and scalable components based on project requirements.",
+  image: Img7,
+  link: "https://taskuber-saas-app.netlify.app/",
+  status: {
+    text: "In Progress",
+    icon: <FaTools className="text-yellow-500 animate-pulse" />
+  },
+}
+
 ];
 
 const cardAnimationVariants = [
