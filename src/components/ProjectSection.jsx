@@ -1,7 +1,7 @@
 // src/components/ProjectSection.jsx
 import React from "react";
 import { motion } from "framer-motion"; // Framer Motion import kiya gaya hai
-import { FaCheckCircle, FaClock, FaBolt, FaSync } from "react-icons/fa";
+import { FaCheckCircle, FaClock, FaBolt,FaTools, FaSync } from "react-icons/fa";
 import Img1 from "../assets/carrent.PNG";
 import Img2 from "../assets/giftcarsite.PNG";
 import Img3 from "../assets/delivery.PNG";
