@@ -9,6 +9,7 @@ import Img4 from "../assets/realtask.PNG";
 import Img5 from "../assets/Capture.PNG"; 
 import Img6 from "../assets/live project.PNG";
 import Img7 from "../assets/Capture 7.PNG";
+ import Img8 from "../assets/adadsdfsf.PNG";
 
 const projects = [
   {
@@ -71,7 +72,7 @@ const projects = [
   id: 8,
   title: "TaskUbr – SaaS Project",
   description: "Built a modern SaaS web application using Next.js and Tailwind CSS. Currently under development with active team collaboration. I am working as a Frontend Developer, focusing on responsive UI, performance, and scalable components based on project requirements.",
-  image: Img7,
+  image: Img8,
   link: "https://taskuber-saas-app.netlify.app/",
   status: {
     text: "In Progress",
