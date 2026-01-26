@@ -1,5 +1,5 @@
 import React from "react";
-import { motion } from "framer-motion"; // Framer Motion import kiya gaya hai
+import { motion } from "framer-motion"; 
 
 const educationData = [
   {
@@ -56,7 +56,6 @@ const ResumeCard = motion(({ date, title, institution, description }) => (
   </div>
 ));
 
-// Staggered animation ke liye variants
 const cardVariants = {
   hidden: { opacity: 0, scale: 0.8 },
   visible: { 
@@ -125,7 +124,7 @@ export default function Resume() {
           className="text-center mt-16"
         >
           <a
-            href="/Muhhamad Adnan.pdf" 
+            href="/src/assets/Muhammad Adnan_Resume.docx (1).pdf" 
             download
             className="bg-[#f05228] text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-all duration-300 inline-block"
           >
