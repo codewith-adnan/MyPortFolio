@@ -124,7 +124,7 @@ export default function Resume() {
           className="text-center mt-16"
         >
           <a
-            href="/src/assets/Muhammad Adnan_Resume.docx (1).pdf" 
+            href="/Muhammad Adnan_Resume.docx (1).pdf" 
             download
             className="bg-[#f05228] text-white font-bold py-3 px-8 rounded-full hover:bg-gray-800 transition-all duration-300 inline-block"
           >
