@@ -6,10 +6,10 @@ import Img1 from "../assets/carrent.PNG";
 import Img2 from "../assets/giftcarsite.PNG";
 import Img3 from "../assets/delivery.PNG";
 import Img4 from "../assets/realtask.PNG";
-import Img5 from "../assets/Capture.PNG";
+import Img5 from "../assets/Capture.png";
 import Img6 from "../assets/live project.PNG";
 import Img7 from "../assets/Capture 7.PNG";
-import Img8 from "../assets/Capture8.PNG";
+import Img8 from "../assets/capture8.png";
 import Img9 from "../assets/Capture (2).png";
 import Img10 from "../assets/Capture (3).png";
 
