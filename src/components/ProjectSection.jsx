@@ -6,7 +6,7 @@ import Img1 from "../assets/carrent.PNG";
 import Img2 from "../assets/giftcarsite.PNG";
 import Img3 from "../assets/delivery.PNG";
 import Img4 from "../assets/realtask.PNG";
-import Img5 from "../assets/Capture.png";
+import Img5 from "../assets/wat.png";
 import Img6 from "../assets/live project.PNG";
 import Img7 from "../assets/Capture 7.PNG";
 import Img8 from "../assets/capture8.png";
