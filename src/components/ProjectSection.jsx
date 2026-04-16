@@ -10,6 +10,9 @@ import Img5 from "../assets/Capture.PNG";
 import Img6 from "../assets/live project.PNG";
 import Img7 from "../assets/Capture 7.PNG";
 import Img8 from "../assets/Capture8.PNG";
+import Img9 from "../assets/Capture (2).png";
+import Img10 from "../assets/Capture (3).png";
+
 
 const projects = [
   {
@@ -78,7 +81,24 @@ const projects = [
       text: "In Progress",
       icon: <FaTools className="text-yellow-500 animate-pulse" />
     },
+  },
+  {
+    id: 9,
+    title: "Golden Sip – Premium Herbal Tea",
+    description: "Elegance In Every Golden Sip. Experience the transformative power of premium organic herbal tea. Crafted with ancient wisdom and modern botanical precision. Built with React, Vite, Tailwind CSS, Swagger API, and a Customer Dashboard.",
+    image: Img9,
+    link: "https://golden-herbal-user-side.vercel.app/",
+    status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
+  },
+  {
+    id: 10,
+    title: "Golden Sip – Premium Herbal Tea",
+    description: "Elegance In Every Golden Sip. Experience the transformative power of premium organic herbal tea. Crafted with ancient wisdom and modern botanical precision. Built with React, Vite, Tailwind CSS, Swagger API, and a Admin Dashboard.",
+    image: Img10,
+    link: "https://golden-herbal-admin-side.vercel.app/",
+    status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
   }
+
 
 ];
 
