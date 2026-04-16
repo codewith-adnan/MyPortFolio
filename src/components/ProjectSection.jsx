@@ -1,15 +1,15 @@
 // src/components/ProjectSection.jsx
 import React from "react";
 import { motion } from "framer-motion"; // Framer Motion import kiya gaya hai
-import { FaCheckCircle, FaClock, FaBolt,FaTools, FaSync } from "react-icons/fa";
+import { FaCheckCircle, FaClock, FaBolt, FaTools, FaSync } from "react-icons/fa";
 import Img1 from "../assets/carrent.PNG";
 import Img2 from "../assets/giftcarsite.PNG";
 import Img3 from "../assets/delivery.PNG";
 import Img4 from "../assets/realtask.PNG";
-import Img5 from "../assets/Capture.PNG"; 
+import Img5 from "../assets/Capture.PNG";
 import Img6 from "../assets/live project.PNG";
 import Img7 from "../assets/Capture 7.PNG";
- import Img8 from "../assets/adadsdfsf.PNG";
+import Img8 from "../assets/Capture8.PNG";
 
 const projects = [
   {
@@ -69,29 +69,29 @@ const projects = [
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
   {
-  id: 8,
-  title: "TaskUbr – SaaS Project",
-  description: "Built a modern SaaS web application using Next.js and Tailwind CSS. Currently under development with active team collaboration. I am working as a Frontend Developer, focusing on responsive UI, performance, and scalable components based on project requirements.",
-  image: Img8,
-  link: "https://taskuber-saas-app.netlify.app/",
-  status: {
-    text: "In Progress",
-    icon: <FaTools className="text-yellow-500 animate-pulse" />
-  },
-}
+    id: 8,
+    title: "TaskUbr – SaaS Project",
+    description: "Built a modern SaaS web application using Next.js and Tailwind CSS. Currently under development with active team collaboration. I am working as a Frontend Developer, focusing on responsive UI, performance, and scalable components based on project requirements.",
+    image: Img8,
+    link: "https://taskuber-saas-app.netlify.app/",
+    status: {
+      text: "In Progress",
+      icon: <FaTools className="text-yellow-500 animate-pulse" />
+    },
+  }
 
 ];
 
 const cardAnimationVariants = [
-  { initial: { opacity: 0, x: 100 }, whileInView: { opacity: 1, x: 0 } }, 
-  { initial: { opacity: 0, y: 100 }, whileInView: { opacity: 1, y: 0 } }, 
-  { initial: { opacity: 0, x: -100 }, whileInView: { opacity: 1, x: 0 } }, 
+  { initial: { opacity: 0, x: 100 }, whileInView: { opacity: 1, x: 0 } },
+  { initial: { opacity: 0, y: 100 }, whileInView: { opacity: 1, y: 0 } },
+  { initial: { opacity: 0, x: -100 }, whileInView: { opacity: 1, x: 0 } },
 ];
 
 export default function ProjectSection() {
   return (
     <section className="py-12 px-4 max-w-7xl mx-auto overflow-hidden" id="projects">
-     
+
       <div className="text-center mb-10">
         <motion.h1
           initial={{ opacity: 0, x: -100 }}
