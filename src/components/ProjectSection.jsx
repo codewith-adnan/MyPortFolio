@@ -12,6 +12,8 @@ import Img7 from "../assets/Capture 7.PNG";
 import Img8 from "../assets/capture8.png";
 import Img9 from "../assets/Capture (2).png";
 import Img10 from "../assets/Capture (3).png";
+import ImgEcommerce from "../assets/ecommerce.png";
+
 
 
 const projects = [
@@ -33,6 +35,14 @@ const projects = [
   },
   {
     id: 3,
+    title: "E-commerce Store",
+    description: "Built this e-commerce store to enhance my UI design skills during my internship task. Developed with React and Tailwind CSS.",
+    image: ImgEcommerce,
+    link: "https://vercel.com/sendtomadnan-gmailcoms-projects/e-commerce",
+    status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
+  },
+  {
+    id: 4,
     title: "Courier Management",
     description: "Courier and logistics management web app using Vue Js & SCSS.",
     image: Img3,
@@ -40,7 +50,7 @@ const projects = [
     status: { text: "In Progress", icon: <FaClock className="text-orange-500" /> },
   },
   {
-    id: 4,
+    id: 5,
     title: "RealTasker Project",
     description: "Task management and productivity app built with React + Styled Components.",
     image: Img4,
@@ -48,7 +58,7 @@ const projects = [
     status: { text: "Working (Short Time)", icon: <FaBolt className="text-blue-500" /> },
   },
   {
-    id: 5,
+    id: 6,
     title: "Real-Time Ad Landing Page",
     description: "A dynamic landing page with real-time functionality for advertisement purposes, built with React and Tailwind CSS to meet customer requirements.",
     image: Img5,
@@ -56,7 +66,7 @@ const projects = [
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
   {
-    id: 6,
+    id: 7,
     title: "Rp Solutions Web Page",
     description: "This project is a dynamic Real-Time Ad Landing Page built with React.js and Tailwind CSS. It leverages GSAP and Framer Motion to deliver live data visualization and an engaging user experience, designed to enhance business advertising efforts.",
     image: Img6,
@@ -64,7 +74,7 @@ const projects = [
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
   {
-    id: 7,
+    id: 8,
     title: "Digital Marketing Portfolio ",
     description: "“Built a responsive and visually engaging digital marketing portfolio using React, CSS, and Framer Motion deployed on Vercel for a global reach & fully based on cleint requirements.”",
     image: Img7,
@@ -72,7 +82,7 @@ const projects = [
     status: { text: "Live Project", icon: <FaSync className="text-teal-500 animate-spin" /> },
   },
   {
-    id: 8,
+    id: 9,
     title: "TaskUbr – SaaS Project",
     description: "Built a modern SaaS web application using Next.js and Tailwind CSS. Currently under development with active team collaboration. I am working as a Frontend Developer, focusing on responsive UI, performance, and scalable components based on project requirements.",
     image: Img8,
@@ -83,7 +93,7 @@ const projects = [
     },
   },
   {
-    id: 9,
+    id: 10,
     title: "Golden Sip – Premium Herbal Tea",
     description: "Elegance In Every Golden Sip. Experience the transformative power of premium organic herbal tea. Crafted with ancient wisdom and modern botanical precision. Built with React, Vite, Tailwind CSS, Swagger API, and a Customer Dashboard.",
     image: Img9,
@@ -91,13 +101,14 @@ const projects = [
     status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
   },
   {
-    id: 10,
+    id: 11,
     title: "Golden Sip – Premium Herbal Tea",
     description: "Elegance In Every Golden Sip. Experience the transformative power of premium organic herbal tea. Crafted with ancient wisdom and modern botanical precision. Built with React, Vite, Tailwind CSS, Swagger API, and a Admin Dashboard.",
     image: Img10,
     link: "https://golden-herbal-admin-side.vercel.app/",
     status: { text: "Completed", icon: <FaCheckCircle className="text-green-500" /> },
   }
+
 
 
 ];
